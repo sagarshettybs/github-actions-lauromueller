@@ -1,0 +1,19 @@
+name: 01 - Building Blocks
+
+on: push
+
+jobs:
+  echo-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+        run: echo "Hello, World!"
+  echo-goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: failed step
+        run: |
+          echo "Goodbye, World!"
+          exit 1
+      - name: This step will be skipped
+        run: echo "This step will be skipped because the previous step failed."
